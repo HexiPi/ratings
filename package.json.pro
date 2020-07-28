@@ -61,7 +61,7 @@
   "files": [
     "lib/**/*"
   ],
-  "description": "This is a React.JS rating module.",
+  "description": "This is a React.JS ratings module.",
   "author": "Jose A. Alvarado",
   "license": "MIT"
 }
