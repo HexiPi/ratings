@@ -1,0 +1,53 @@
+@font-face{
+    font-family: CUR;
+    src: url(../Fonts/cour.ttf);
+}
+
+.comment-form-container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+fieldset, label, span { margin: 0; padding: 0; }
+
+label {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.rating {
+	border: none;
+    float: left;
+}
+
+.rating > .commenter-rating {
+	display: none;
+}
+
+.rating > label:before {
+	margin: 5px;
+	font-size: 1.25em;
+  	display: inline-block;
+}
+
+.rating > label {
+	color: #ddd;
+	float: right;
+}
+
+.rating > .half:before { 
+	position: absolute;
+}
+
+.form-button-group {
+	display: flex;
+}
+
+.rating > .commenter-rating:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: orange;  } /* hover previous stars in list */
+
+.rating > .commenter-rating:checked + label:hover, /* hover current star when changing rating */
+.rating > .commenter-rating:checked ~ label:hover,
+.rating > label:hover ~ .commenter-rating:checked ~ label, /* lighten current selection */
+.rating > .commenter-rating:checked ~ label:hover ~ label { color: #FFED85;  }

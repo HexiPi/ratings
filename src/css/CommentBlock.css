@@ -1,0 +1,87 @@
+/* @font-face {
+	font-family: FontAwesome;
+	src: url(~font-awesome/fonts/fontawesome-webfont.ttf);
+} */
+
+@font-face{
+    font-family: CUR;
+    src: url(../Fonts/cour.ttf);
+}
+
+.comment-container {
+	background-color: white;
+	color: black;
+    padding: 1%;
+	border-radius: 13px;
+	border: black solid 1px;
+	width: 100%;
+	position: relative;
+	display: inline-table;
+}
+
+.comment-container-user-icon-container {
+	/* border: red dashed 2px; */
+	width: 5%;
+	height: 100%;
+	float: left;
+}
+
+.comment-container-user-icon-container span {
+	font-size: xxx-large;
+}
+
+.comment-container-comment-body {
+	/* border: red dashed 2px; */
+	width: 95%;
+	height: 100%;
+	float: right;
+}
+
+.comment-container-commenter-name {
+	/* border: red dashed 2px; */
+	font-family: CUR, cursive;
+	margin-left: 3rem;
+	font-size: x-large;
+}
+
+.comment-container-commenter-rating {
+	/* border: red dashed 2px; */
+	border: none;
+	margin-left: 3.5rem;
+    float: left;
+}
+
+.comment-container-commenter-rating > input {
+	display: none;
+}
+
+.comment-container-commenter-rating > span:before {
+	margin: 2px;
+	font-size: 1em;
+  	display: inline-block;
+}
+
+.comment-container-commenter-rating > span {
+	color: #ddd;
+	float: right;
+}
+
+.comment-container-commenter-rating > .half:before { 
+	position: absolute;
+}
+
+.comment-container-commenter-rating > .filled {
+	color: orange;
+}
+
+.comment-container-comment-content {
+	/* border: red dashed 2px; */
+	font-family: CUR, serif;
+	margin-left: 3.5rem;
+	font-size: large;
+}
+
+.comment-container-comment-date {
+	/* border: red dashed 2px; */
+	font-size: medium;
+}
