@@ -3,9 +3,10 @@
     src: url(../Fonts/cour.ttf);
 }
 
-.comment-form-container {
+.ratings-container {
 	width: 100%;
 	margin: 0 auto;
+	padding: 1rem;
 }
 
 fieldset, label, span { margin: 0; padding: 0; }

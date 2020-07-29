@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
 import './App.css';
 import RatingSection, { CommentRes } from './components/Rating.jsx';
+import RatingsSummary, { defaultRatingPercentages } from './components/RatingsSummary.jsx';
 
 class App extends Component {
   state = {
     comments: [], //[ { commenter_email: 'ja@test.com', commenter_name: 'Jose A.', comment_content: 'Cool stuff!', commenter_rating: 4 , timestamp: 1588787700000 } ],
     commentSubmitRes: CommentRes.NONE,
   };
+
+  createRatingPercentages = () => {
+    const ratingsCount = { ...defaultRatingPercentages };
+    const ratingPercentages = { ...defaultRatingPercentages };
+    const totalNumberOfComments = this.state.comments.length;
+
+    this.state.comments.forEach(comment => {
+      const rating = comment.commenter_rating.toString();
+      ratingsCount[rating] = Number(ratingsCount[rating]) + 1;
+    });
+
+    Object.keys(ratingsCount).forEach((key, _) => {
+      const ratingCount = ratingsCount[key];
+      const percentageCalc = (Number(ratingCount) / totalNumberOfComments) * 100;
+
+      ratingPercentages[key] = (percentageCalc) ? percentageCalc : 0;
+    });
+
+    return ratingPercentages;
+  }
 
   addComment = (commentInfo) => {
     const comments = this.state.comments;
@@ -25,13 +46,18 @@ class App extends Component {
   render() {
     return(
       <div className="App-header">
-        <div style={{ width: '25%', marginLeft: 'auto', marginRight: 'auto' }}>
+        <div style={{ marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexFlow: 'row wrap', alignItems: 'center'}}>
+          <div style={{ flexGrow: 1 }}>
+            <RatingsSummary ratingPercentages={this.createRatingPercentages()}  numberOfReviews={this.state.comments.length}/>
+          </div>
+          <div style={{ flexGrow: 1 }}>
             <RatingSection
-                blockGroupInfo={this.state.comments}
-                addComment={this.addComment}
-                commentSubmitResult={this.state.commentSubmitRes}
-                commentSubmitResultReset={this.commentSubmitResultReset}
+              blockGroupInfo={this.state.comments}
+              addComment={this.addComment}
+              commentSubmitResult={this.state.commentSubmitRes}
+              commentSubmitResultReset={this.commentSubmitResultReset}
             />
+          </div>
         </div>
       </div>
     );

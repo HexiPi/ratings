@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CommentBlock from './CommentBlock.jsx';
 import { Form, FormGroup, Label, Input, Button, Tooltip } from  'reactstrap';
+import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import '../css/Rating.css';
@@ -171,15 +172,15 @@ class RatingSection extends React.Component {
   render() {
     return (
         <div>
-            <div className="comment-form-container">
+            <div className="ratings-container">
                 <h2>{this.props.heading}</h2>
                 <h5>{this.props.subHeading}</h5>
                 <br />
                 {this.displayForm()}
+                <br /><br />
+                <h2>Reviews</h2>
+                {this.generateCommentBlockGroup(this.props.blockGroupInfo)}
             </div>
-            <br /><br />
-            <h2>Reviews</h2>
-            {this.generateCommentBlockGroup(this.props.blockGroupInfo)}
         </div>
       );
     }

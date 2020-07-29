@@ -1,0 +1,28 @@
+.ratings-summary-heading {
+    font-size: xxx-large;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.ratings-summary-container {
+    padding: 1rem;
+}
+
+.rating-average {
+    font-weight: bold;
+    font-size: xxx-large;
+}
+
+.rating-star {
+    color: orange;
+}
+
+.rating-progress-bar-container {
+    font-size: large;
+    font-weight: bold;
+}
+
+.number-of-reviews {
+    font-size: small;
+    text-decoration: underline;
+}
