@@ -1,21 +1,49 @@
 {
-  "name": "rating-hexipi",
+  "name": "ratings-hexipi",
   "version": "0.1.0",
-  "private": true,
+  "main": "./lib/Ratings.js",
+  "types": "./lib/Ratings.d.ts",
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "color-functions-hexipi": "^0.1.5"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.26",
+    "@types/prop-types": "^15.7.3",
+    "@types/react-dom": "^16.9.8",
+    "@types/reactstrap": "^8.5.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^3.6.0",
+    "file-loader": "^6.0.0",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "source-map-loader": "^1.0.1",
+    "style-loader": "^1.2.1",
+    "svg-url-loader": "^6.0.0",
+    "ts-loader": "^8.0.1",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "prebuild": "tsc",
+    "build": "webpack"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +60,9 @@
       "last 1 safari version"
     ]
   },
+  "files": [
+    "lib/**/*"
+  ],
   "description": "This is a React.JS ratings module.",
   "author": "Jose A. Alvarado",
   "license": "MIT"

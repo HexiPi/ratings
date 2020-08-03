@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { Rating as RatingSection, RatingsSummary, CommentRes, defaultRatingPercentages } from './Ratings';
+import { getCurrentPageBgColor } from 'color-functions-hexipi';
 import './App.css';
-import RatingSection, { CommentRes } from './components/Rating.jsx';
-import RatingsSummary, { defaultRatingPercentages } from './components/RatingsSummary.jsx';
 
 class App extends Component {
   state = {
-    comments: [], //[ { commenter_email: 'ja@test.com', commenter_name: 'Jose A.', comment_content: 'Cool stuff!', commenter_rating: 4 , timestamp: 1588787700000 } ],
+    comments: [], // [ { commenter_email: 'ja@test.com', commenter_name: 'Jose A.', comment_content: 'Cool stuff!', commenter_rating: 4 , timestamp: 1588787700000 } ],
     commentSubmitRes: CommentRes.NONE,
   };
 
@@ -48,14 +48,15 @@ class App extends Component {
       <div className="App-header">
         <div style={{ marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexFlow: 'row wrap', alignItems: 'center'}}>
           <div style={{ flexGrow: 1 }}>
-            <RatingsSummary ratingPercentages={this.createRatingPercentages()}  numberOfReviews={this.state.comments.length}/>
+            <RatingsSummary ratingPercentages={this.createRatingPercentages()}  numberOfReviews={this.state.comments.length} backgroundColor={getCurrentPageBgColor()}/>
           </div>
           <div style={{ flexGrow: 1 }}>
             <RatingSection
-              blockGroupInfo={this.state.comments}
+              commentsData={this.state.comments}
               addComment={this.addComment}
               commentSubmitResult={this.state.commentSubmitRes}
               commentSubmitResultReset={this.commentSubmitResultReset}
+              backgroundColor={getCurrentPageBgColor()}
             />
           </div>
         </div>

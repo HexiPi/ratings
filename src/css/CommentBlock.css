@@ -5,7 +5,7 @@
 
 @font-face{
     font-family: CUR;
-    src: url(../Fonts/cour.ttf);
+    src: url(../fonts/cour.ttf);
 }
 
 .comment-container {
@@ -39,7 +39,7 @@
 
 .comment-container-commenter-name {
 	/* border: red dashed 2px; */
-	font-family: CUR, cursive;
+	font-family: CUR, serif;
 	margin-left: 3rem;
 	font-size: x-large;
 }

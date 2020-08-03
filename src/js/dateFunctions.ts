@@ -1,12 +1,12 @@
-export const formatDate = (timestamp, withTime, toUTC) => {
-    if (timestamp === 'null') {
+export const formatDate = (timestamp: number, withTime?: boolean, toUTC?: boolean) => {
+    if (timestamp === undefined || timestamp === -1) {
         return '';
     }
     else {
         var date = new Date(timestamp);
 
         if (toUTC) {
-            date = new Date(offsetUTCToLocalTimeStamp(timestamp));
+            date = new Date(offsetUTCToLocalTimeStamp(Number(timestamp)));
         }
         
         let formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
@@ -27,14 +27,14 @@ export const generateStartOfDayTimestamp = () => {
     return startOfDay.getTime();
 }
 
-export const offsetUTCToLocalTimeStamp = (timestamp, inverse) => {
+export const offsetUTCToLocalTimeStamp = (timestamp: number, inverse?: boolean) => {
     const now = new Date();
     const timeStr = now.toTimeString();
     const offsetStr = timeStr.substr(timeStr.indexOf('GMT') + 3, 5);
     
     const offsetSign = offsetStr.substr(0, 1);
-    const hourOffset =  offsetSign + offsetStr.substr(1, 2);
-    const minuteOffset = offsetSign + offsetStr.substr(3, 2);
+    const hourOffset =  Number(offsetSign + offsetStr.substr(1, 2));
+    const minuteOffset = Number(offsetSign + offsetStr.substr(3, 2));
 
     const inverseFactor = (inverse) ? 1 : -1;
 
