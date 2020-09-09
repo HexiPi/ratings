@@ -39,3 +39,28 @@ body {
     transform: rotate(360deg);
   }
 }
+
+#review-section {
+  width: 100%;
+  background: linear-gradient(360deg, #4E4C56 0%, #393740 100%);
+  /* background-color: #696969; */
+  border-radius: 0;
+}
+#review-section .reviews-section-heading {
+  padding: 0 100px;
+  color: #525252;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+#review-section .reviews-section-component-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+}
+
+#review-section .reviews-section-component {
+  flex-grow: 1;
+  max-width: 50%;
+}

@@ -1,5 +1,3 @@
-//DEPRECATED
-
 import * as React from 'react';
 import * as queryString from 'query-string';
 // import PropTypes from 'prop-types';

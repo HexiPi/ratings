@@ -1,7 +1,8 @@
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/js/bootstrap';
-import Rating, { CommentRes } from './components/Rating';
+import RatingSection, { CommentRes } from './components/RatingSection';
 import RatingsSummary, { defaultRatingPercentages } from './components/RatingsSummary';
 
-export { Rating, RatingsSummary, CommentRes, defaultRatingPercentages };
+export default RatingSection;
+export { RatingsSummary, CommentRes, defaultRatingPercentages };

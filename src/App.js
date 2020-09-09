@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Rating as RatingSection, RatingsSummary, CommentRes, defaultRatingPercentages } from './Ratings';
+import RatingSection, { RatingsSummary, CommentRes, defaultRatingPercentages } from './Ratings';
 import { getCurrentPageBgColor } from 'color-functions-hexipi';
 import './App.css';
 
@@ -9,7 +9,7 @@ class App extends Component {
     commentSubmitRes: CommentRes.NONE,
   };
 
-  createRatingPercentages = () => {
+  calculateRatingPercentages = () => {
     const ratingsCount = { ...defaultRatingPercentages };
     const ratingPercentages = { ...defaultRatingPercentages };
     const totalNumberOfComments = this.state.comments.length;
@@ -29,7 +29,7 @@ class App extends Component {
     return ratingPercentages;
   }
 
-  addComment = (commentInfo) => {
+  addComment = commentInfo => {
     const comments = this.state.comments;
 
     commentInfo.timestamp = new Date().getTime();
@@ -43,20 +43,27 @@ class App extends Component {
 
   commentSubmitResultReset = () => this.setState({ commentSubmitRes: CommentRes.NONE });
 
+  onCommentDelete = comment_data => {
+    alert(JSON.stringify(comment_data));
+  }
+
   render() {
     return(
-      <div className="App-header">
-        <div style={{ marginLeft: 'auto', marginRight: 'auto', display: 'flex', flexFlow: 'row wrap', alignItems: 'center'}}>
-          <div style={{ flexGrow: 1 }}>
-            <RatingsSummary ratingPercentages={this.createRatingPercentages()}  numberOfReviews={this.state.comments.length} backgroundColor={getCurrentPageBgColor()}/>
+      <div id="review-section" className="App-header">
+        <div className="reviews-section-component-container">
+          <div className="reviews-section-component">
+            <RatingsSummary ratingPercentages={this.calculateRatingPercentages()}  numberOfReviews={this.state.comments.length} backgroundColor={getCurrentPageBgColor()}/>
           </div>
-          <div style={{ flexGrow: 1 }}>
+          <div className="reviews-section-component">
             <RatingSection
+              submitMethod="post"
               commentsData={this.state.comments}
               addComment={this.addComment}
               commentSubmitResult={this.state.commentSubmitRes}
               commentSubmitResultReset={this.commentSubmitResultReset}
               backgroundColor={getCurrentPageBgColor()}
+              isAdmin={true}
+              onCommentDelete={this.onCommentDelete}
             />
           </div>
         </div>
