@@ -46,6 +46,7 @@ body {
   /* background-color: #696969; */
   border-radius: 0;
 }
+
 #review-section .reviews-section-heading {
   padding: 0 100px;
   color: #525252;
@@ -63,4 +64,14 @@ body {
 #review-section .reviews-section-component {
   flex-grow: 1;
   max-width: 50%;
+}
+
+@media only screen and (max-width: 960px) {
+#review-section .reviews-section-heading {
+  font-size: 8rem;
+}
+
+#review-section .reviews-section-component {
+  max-width: 100%;
+}
 }

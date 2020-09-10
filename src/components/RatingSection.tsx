@@ -155,9 +155,8 @@ class RatingSection extends React.Component<RatingSectionProps, {}> {
             }
             else {
                 this.props.addComment(newComment);
+                this.setState(RatingSection.defaultState);
             }
-
-            this.setState(RatingSection.defaultState);
         }
     }
 

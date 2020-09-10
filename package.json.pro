@@ -1,6 +1,6 @@
 {
   "name": "ratings-hexipi",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./lib/Ratings.js",
   "types": "./lib/Ratings.d.ts",
   "dependencies": {
@@ -66,5 +66,6 @@
   ],
   "description": "This is a React.JS ratings module.",
   "author": "Jose A. Alvarado",
+  "keywords": ["ratings", "reviews", "react", "react.js", "ui", "hexipi"],
   "license": "MIT"
 }
