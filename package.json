@@ -1,20 +1,20 @@
 {
   "name": "ratings-hexipi",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
-    "@types/react-dom": "^16.9.8",
-    "@types/reactstrap": "^8.5.1",
-    "bootstrap": "^4.5.2",
-    "color-functions-hexipi": "^0.1.5",
+    "@types/react-dom": "^17.0.0",
+    "@types/reactstrap": "^8.7.2",
+    "bootstrap": "^4.5.3",
+    "color-functions-hexipi": "^0.1.7",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
-    "query-string": "^6.13.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "reactstrap": "^8.4.1",
-    "typescript": "^3.9.7"
+    "query-string": "^6.13.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "reactstrap": "^8.7.1",
+    "typescript": "^4.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,5 +40,6 @@
   "description": "This is a React.JS ratings module.",
   "author": "Jose A. Alvarado",
   "keywords": ["ratings", "reviews", "react", "react.js", "ui", "hexipi"],
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/HexiPi/ratings"
 }
