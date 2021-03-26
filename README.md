@@ -1,13 +1,14 @@
 # __Ratings React.JS Component by _#HexiPi___
 
 ## __<u>Installation:</u>__
+_Note: This module requires bootstrap & font awesome for optimal CSS styling._ 
 
 ````
-npm install ratings-hexipi --save
+npm install ratings-hexipi bootstrap reactstrap font-awesome --save
 
 OR
 
-yarn add ratings-hexipi
+yarn add ratings-hexipi bootstrap reactstrap font-awesome
 ````
 
 ## __<u>Example of Usage:</u>__
@@ -16,6 +17,8 @@ yarn add ratings-hexipi
 import React, { Component } from 'react';
 import RatingSection, { RatingsSummary, CommentRes, 
         defaultRatingPercentages } from 'ratings-hexipi';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
 import './App.css';
 
 class App extends Component {
